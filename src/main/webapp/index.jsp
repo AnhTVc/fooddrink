@@ -34,16 +34,19 @@
 					<span class="sr-only">Toggle navigation</span> Menu <i
 						class="fa fa-bars"></i>
 				</button>
+				<div></div>
 				<a class="navbar-brand page-scroll" href="#page-top">Food and
 					Drink</a>
+
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="hidden"><a href="#page-top"></a></li>
-					<li><a class="page-scroll" href="#portfolio">Portfolio</a></li>
-					<li><a class="page-scroll" href="#about">About</a></li>
+					<li><a class="page-scroll" href="#portfolio">Special Sale</a></li>
+					<li><a class="page-scroll" href="#about">Latest Sale</a></li>
+					<li><a class="page-scroll" href="#about">Interested Sale</a></li>
 					<li><a class="page-scroll" href="#contact">Contact</a></li>
 				</ul>
 			</div>
@@ -52,69 +55,36 @@
 		<!-- /.container-fluid -->
 	</nav>
 
-	<!-- Header -->
-	<header>
-		<div class="container">
-			<div class="intro-text">
-				<div class="intro-lead-in">Welcome To Solution Book Table
-					Online</div>
-				<div class="sb-search sb-search-open">
-					<div class="row">
-						<div class="col-sm-4 col-md-4">
-							<form style="width: 100%; margin: 0px;">
-								<input class="sb-search-input" placeholder="Search for food..."
-									type="text" value="" name="search" style="width: 100%;">
-								<!--                          <input class="sb-search-submit" type="submit" value="">
-	                             <span class="sb-icon-search"></span> -->
-							</form>
-						</div>
-						<div class="col-sm-2 col-md-2">
-							<div class="dropdown">
-								<button class="dropbtn">Find places</button>
-								<div class="dropdown-content">
-									<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link
-										3</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-2 col-md-2" >
-							<div class="dropdown">
-								<button class="dropbtn">Today</button>
-								<div class="dropdown-content">
-									<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link
-										3</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-2 col-md-2" >
-							<div class="dropdown">
-								<button class="dropbtn">Time</button>
-								<div class="dropdown-content">
-									<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link
-										3</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-2 col-md-2 col-xs-2" >
-							<form style="width: 100%; margin: 0px;">
-								<input class="sb-search-submit" type="submit" value="">
-								<span class="sb-icon-search"></span>
-							</form>
-						</div>
-					</div>
-
-				</div>
-				<!-- <a href="#" class="page-scroll btn btn-xl">Tell Me More</a> -->
-			</div>
-		</div>
-	</header>
 
 	<!-- Portfolio Grid Section -->
 	<section id="portfolio" class="bg-light-gray">
-		<div class="container" style="margin-top: -90px;">
+		<div class="container">
+			<div class="sb-search sb-search-open">
+				<div class="row">
+					<div class="col-sm-3 col-md-3 col-xs-2"></div>
+					<div class="col-sm-4 col-md-4 col-xs-6">
+						<form>
+							<input class="sb-search-input" placeholder="Search for food..."
+								type="text" value="" name="search">
+							<!--                          <input class="sb-search-submit" type="submit" value="">
+	                             <span class="sb-icon-search"></span> -->
+						</form>
+					</div>
+					<div class="col-sm-2 col-md-2 col-xs-2 ">
+						<form style="width: 100%; margin: 0px; height: 9vh;">
+							<input class="sb-search-submit" type="submit" value=""> <span
+								class="sb-icon-search"></span>
+						</form>
+					</div>
+					<div class="col-sm-3 col-md-3 col-xs-2"></div>
+				</div>
+
+			</div>
 			<div class="row" style="margin-top: 70px;">
 				<div class="col-sm-4 col-md-4">
-					<button class="dropbtn">Special Sale</button>
+
+					<input type="text" name="choosedate" value="10/24/1984" />
+					</script>
 				</div>
 				<div class="col-sm-4 col-md-4">
 					<button class="dropbtn">Latest Sale</button>
@@ -763,6 +733,7 @@
 
 	<!-- jQuery -->
 	<script src="<%=contextPath%>/lib/jquery/jquery.min.js"></script>
+	<script src="<%=contextPath%>/lib/jquery/jquery.timepicker.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="<%=contextPath%>/lib/bootstrap/js/bootstrap.min.js"></script>
@@ -774,7 +745,7 @@
 	<!-- Contact Form JavaScript -->
 	<script src="js/jqBootstrapValidation.js"></script>
 	<script src="js/contact_me.js"></script>
-
+	<script src="js/customer.js"></script>
 	<!-- Theme JavaScript -->
 	<script src="<%=contextPath%>/js/agency.min.js"></script>
 
