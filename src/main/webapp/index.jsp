@@ -1,4 +1,8 @@
-<html lang="en">
+<%@ page import="java.io.*,java.util.*"%>
+<%@ page import="javax.servlet.*,java.text.*"%>
+
+<html lang="vi">
+<%@ page pageEncoding="UTF-8"%>
 <%
 	String contextPath = request.getContextPath();
 %>
@@ -25,326 +29,568 @@
 
 	<!-- Navigation -->
 	<nav id="mainNav"
-		class="navbar navbar-default navbar-custom navbar-fixed-top">
+		class="navbar navbar-default navbar-custom navbar-fixed-top"
+		style="background-color: #6FA308">
 		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header page-scroll">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span> Menu <i
 						class="fa fa-bars"></i>
 				</button>
-				<div></div>
-				<a class="navbar-brand page-scroll" href="#page-top">Food and
-					Drink</a>
-
+				<div class="navbar-brand page-scroll"
+					style="padding: 0; width: 13em; margin: 0; margin-top: 5px;">
+					<div id="custom-search-input">
+						<div class="input-group col-md-12">
+							<input type="text" class="form-control input-lg navbar-default"
+								placeholder="Tìm kiếm món ăn" style="background: none" /> <span
+								class="input-group-btn">
+								<button class="btn btn-info btn-lg" type="button">
+									<i class="glyphicon glyphicon-search"></i>
+								</button>
+							</span>
+						</div>
+					</div>
+				</div>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="hidden"><a href="#page-top"></a></li>
-					<li><a class="page-scroll" href="#portfolio">Special Sale</a></li>
-					<li><a class="page-scroll" href="#about">Latest Sale</a></li>
-					<li><a class="page-scroll" href="#about">Interested Sale</a></li>
-					<li><a class="page-scroll" href="#contact">Contact</a></li>
+					<li><a class="page-scroll" href="#portfolio" style="text-transform: uppercase;">Ưu đãi đặc
+							biệt</a></li>
+					<li><a class="page-scroll" href="#lastsafe" style="text-transform: uppercase;">Ưu đãi mới
+							nhất</a></li>
+					<li><a class="page-scroll" href="#interested" style="text-transform: uppercase;">Quan tâm
+							nhất</a></li>
+					<li><a class="page-scroll" href="#contact" style="text-transform: uppercase;">Đăng nhập</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>
 		<!-- /.container-fluid -->
 	</nav>
+	<!-- Header -->
+	<header>
+		<div class="container">
+			<div class="intro-text">
+				<div class="row">
+					<nav class="navbar navbar-default" style="margin-top: 100px;">
+						<div class="container-fluid" style="width: 100%;">
+							<ul class="nav navbar-nav"
+								style="width: 100%; margin-right: auto; margin-left: 0px;">
+								<li class="col-sm-1"></li>
+								<li class="col-sm-3"><select class="dropbtn"
+									style="text-align: center;">
+										<option value="BADINH">Chọn địa điểm</option>
+										<option value="BADINH">Ba Đình</option>
 
+										<option value="DONGDA">Đống Đa</option>
+
+										<option value="HAIBATRUNG">Hai Bà Trưng</option>
+
+										<option value="HOANGMAI">Hoàng Mai</option>
+
+										<option value="TAYHO">Tây Hồ</option>
+
+										<option value="BAVI">Ba Vì</option>
+
+										<option value="DANPHUONG">Đan Phượng</option>
+
+										<option value="GIALAM">Gia Lâm</option>
+
+										<option value="MELINH">Mê Linh</option>
+
+										<option value="PHUXUYEN">Phú Xuyên</option>
+
+										<option value="QUOCOAI">Quốc Oai</option>
+
+										<option value="THACHTHAT">Thạch Thất</option>
+
+										<option value="THANHTRI">Thanh Trì</option>
+
+										<option value="TULIEM">Từ Liêm</option>
+
+										<option value="SONTAY">Sơn Tây</option>
+
+										<option value="CAUGIAY">Cầu Giấy</option>
+
+										<option value="HADONG">Hà Đông</option>
+
+										<option value="HOANKIEM">Hoàn Kiếm</option>
+
+										<option value="LONGBIEN">Long Biên</option>
+
+										<option value="THANHXUAN">Thanh Xuân</option>
+
+										<option value="CHUONGMY">Chương Mỹ</option>
+
+										<option value="DONGANH">Đông Anh</option>
+
+										<option value="HOAIDUC">Hoài Đức</option>
+
+										<option value="MYDUC">Mỹ Đức</option>
+
+										<option value="PHUCTHO">Phúc Thọ</option>
+
+										<option value="SOCSON">Sóc Sơn</option>
+
+										<option value="THANHOAI">Thanh Oai</option>
+
+										<option value="THUONGTIN">Thường Tín</option>
+
+								</select></li>
+								<li class="col-sm-3"><select class="dropbtn"
+									style="text-align: center;">
+										<option value="">Chọn ngày</option>
+										<%
+											for (int i = 15; i < 31; i += 1) {
+										%>
+										<option value="date">Ngày
+											<%=i%></option>
+										<%
+											}
+										%>
+								</select></li>
+								<li class="col-sm-3"><select class="dropbtn"
+									style="text-align: center;">
+										<option value="" class="dropdown-header">Chọn khung giờ</option>
+										<%
+											Date date = new SimpleDateFormat("hh:mm").parse("05:30");
+											SimpleDateFormat ft = new SimpleDateFormat("hh:mm");
+											Calendar cal = Calendar.getInstance();
+											cal.setTime(date);
+											for (int i = 0; i <= 12; ++i) {
+												cal.add(Calendar.MINUTE, 30);
+												Date tempDate = cal.getTime();
+										%>
+										<option value="time"><%=ft.format(tempDate)%> AM
+										</option>
+										<%
+											}
+										%>
+								</select></li>
+								<li class="col-sm-1">
+									<form style="width: 100%; height: 9vh;">
+										<input class="sb-search-submit" type="submit" value="">
+										<span class="sb-icon-search"></span>
+									</form>
+								</li>
+								<li class="col-sm-1"></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+
+			</div>
+		</div>
+	</header>
 
 	<!-- Portfolio Grid Section -->
 	<section id="portfolio" class="bg-light-gray">
 		<div class="container">
-			<div class="sb-search sb-search-open">
-				<div class="row">
-					<div class="col-sm-3 col-md-3 col-xs-2"></div>
-					<div class="col-sm-4 col-md-4 col-xs-6">
-						<form>
-							<input class="sb-search-input" placeholder="Search for food..."
-								type="text" value="" name="search">
-							<!--                          <input class="sb-search-submit" type="submit" value="">
-	                             <span class="sb-icon-search"></span> -->
-						</form>
-					</div>
-					<div class="col-sm-2 col-md-2 col-xs-2 ">
-						<form style="width: 100%; margin: 0px; height: 9vh;">
-							<input class="sb-search-submit" type="submit" value=""> <span
-								class="sb-icon-search"></span>
-						</form>
-					</div>
-					<div class="col-sm-3 col-md-3 col-xs-2"></div>
+			<div class="row">
+				<div class="col-sm-1 col-md-1 col-xs-1 col-lg-1"></div>
+				<div class="col-sm-2 col-md-2 col-xs-2 col-lg-2"
+					style="text-align: center;">
+					<img alt="" src="img/search.png" class=" img-responsive"
+						style="height: 14vh; width: 14vh; float: center; display: block; margin: 0 auto;">
+					<p style="font-size: 16px;">Tìm kiếm ưu đãi</p>
 				</div>
+				<div class="col-sm-2 col-md-2 col-xs-2 col-lg-2"></div>
+				<div class="col-sm-2 col-md-2 col-xs-2 col-lg-2"
+					style="text-align: center;">
+					<img alt="" src="img/menu.png" class="img-responsive"
+						style="height: 14vh; width: 14vh; float: center; display: block; margin: 0 auto;">
+					<p style="font-size: 16px;">Đặt bàn nhanh chóng</p>
+				</div>
+				<div class="col-sm-2 col-md-2 col-xs-2 col-lg-2"></div>
+				<div class="col-sm-2 col-md-2 col-xs-2 col-lg-2"
+					style="text-align: center;">
+					<img alt="" src="img/piggy-bank.png" class=" img-responsive"
+						style="height: 14vh; width: 14vh; float: center; display: block; margin: 0 auto;">
+					<p style="font-size: 16px;">Tiết kiệm thả ga</p>
+				</div>
+				<div class="col-sm-1 col-md-1 col-xs-1 col-lg-1"></div>
 
 			</div>
-			<div class="row" style="margin-top: 70px;">
-				<div class="col-sm-4 col-md-4">
-
-					<input type="text" name="choosedate" value="10/24/1984" />
-					</script>
+			<div class="row" style="margin-top: 50px; margin-bottom: 30px; ">
+				<div class="col-lg-1 col-xs-1 col-sm-1"></div>
+				<div class="col-lg-10 text-center col-xs-8 col-sm-10">
+					<h2 class="section-heading">Ưu đãi đặc biệt</h2>
 				</div>
-				<div class="col-sm-4 col-md-4">
-					<button class="dropbtn">Latest Sale</button>
-				</div>
-				<div class="col-sm-4 col-md-4">
-					<button class="dropbtn">Interested Sale</button>
+				<div class="col-lg-1 col-xs-3 col-sm-1" style="margin-top: 10vh;">
+					<a href="#">Xem thêm</a>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-12 text-center">
-					<h2 class="section-heading">Portfolio</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a href="#portfolioModal1" class="portfolio-link"
-						data-toggle="modal">
-						<div class="portfolio-hover">
-							<div class="portfolio-hover-content">
-								<i class="fa fa-plus fa-3x"></i>
-							</div>
-						</div> <img src="img/portfolio/roundicons.png" class="img-responsive"
-						alt="">
-					</a>
-					<div class="portfolio-caption">
-						<h4>Round Icons</h4>
-						<p class="text-muted">Graphic Design</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item">
+				<div class="col-md-4 col-sm-6 portfolio-item"
+					style="padding-right: 15px; padding-left: 15px">
 					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
-						</div> <img src="img/portfolio/startup-framework.png"
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-5-636015949487216336.jpg"
 						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						<h4>Startup Framework</h4>
-						<p class="text-muted">Website Design</p>
+						<h4 style="color: #4B8706">Quán nướng</h4>
+						<p style="font-style: normal; font-size: 14px; margin-bottom: 10px; color: #56380E">100 Lý thái tổ / Hai bà trưng</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
+							
+						<p style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item">
+				<div class="col-md-4 col-sm-6 portfolio-item"
+					style="padding-right: 15px; padding-left: 15px">
+					<a href="#portfolioModal2" class="portfolio-link"
+						data-toggle="modal">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div>
+							<span class="label label-danger noty-safe">10% OFF</span> <img
+								src="https://media.foody.vn/reservation_res_info/s800x350/foody-800x350-tablenow-octobar-636020136062443382.jpg"
+								class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<p class="text-muted">276 Trương định / Hoàng mai</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 portfolio-item"
+					style="padding-right: 15px; padding-left: 15px">
 					<a href="#portfolioModal3" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
-						</div> <img src="img/portfolio/treehouse.png" class="img-responsive"
-						alt="">
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-cover-tablenow-1000x300-iyakazayancha-635799102456685638.jpg "
+						class="img-responsive" alt="">
+					</a>
+					<div class="portfolio-caption">
+						<p class="text-muted">Website Design</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 portfolio-item"
+					style="padding-right: 15px; padding-left: 15px">
+					<a href="#portfolioModal2" class="portfolio-link"
+						data-toggle="modal">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-850x350-tablenow-dakgalbi-636020400489865804.jpg"
+						class="img-responsive" alt="">
+					</a>
+					<div class="portfolio-caption">
+						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 portfolio-item"
+					style="padding-right: 15px; padding-left: 15px">
+					<a href="#portfolioModal2" class="portfolio-link"
+						data-toggle="modal">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-kei-back-635806082869087926.jpg"
+						class="img-responsive" alt="">
+					</a>
+					<div class="portfolio-caption">
+						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 portfolio-item"
+					style="padding-right: 15px; padding-left: 15px">
+					<a href="#portfolioModal2" class="portfolio-link"
+						data-toggle="modal">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-800x350-tablenow-black-635997101560474360.jpg"
+						class="img-responsive" alt="">
+					</a>
+					<div class="portfolio-caption">
+						
+						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- lastsafe Section -->
+	<section id="lastsafe" class="">
+		<div class="container">
+			<div class="row" style="margin: 5vh">
+				<div class="col-lg-1 col-xs-1 col-sm-1"></div>
+				<div class="col-lg-10 text-center col-xs-10 col-sm-10">
+					<h2 class="section-heading">Ưu đãi mới nhất</h2>
+				</div>
+				<div class="col-lg-1 col-xs-1 col-sm-1"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+					<a href="#portfolioModal2" class="portfolio-link"
+						data-toggle="modal">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-5-636015949487216336.jpg"
+						class="img-responsive" alt="">
+					</a>
+					<div class="portfolio-caption">
+						
+						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+					<a href="#portfolioModal2" class="portfolio-link"
+						data-toggle="modal">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div>
+							<span class="label label-danger noty-safe">10% OFF</span> <img
+								src="https://media.foody.vn/reservation_res_info/s800x350/foody-800x350-tablenow-octobar-636020136062443382.jpg"
+								class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4>Thịt bò tái hấp</h4>
+						<p class="text-muted">276 Trương định / Hoàng mai</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+					<a href="#portfolioModal3" class="portfolio-link"
+						data-toggle="modal">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-cover-tablenow-1000x300-iyakazayancha-635799102456685638.jpg "
+						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
 						<h4>Treehouse</h4>
 						<p class="text-muted">Website Design</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a href="#portfolioModal4" class="portfolio-link"
+				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
-						</div> <img src="img/portfolio/golden.png" class="img-responsive" alt="">
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-850x350-tablenow-dakgalbi-636020400489865804.jpg"
+						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						<h4>Golden</h4>
-						<p class="text-muted">Website Design</p>
+						
+						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a href="#portfolioModal5" class="portfolio-link"
+				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
-						</div> <img src="img/portfolio/escape.png" class="img-responsive" alt="">
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-kei-back-635806082869087926.jpg"
+						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						<h4>Escape</h4>
-						<p class="text-muted">Website Design</p>
+						
+						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a href="#portfolioModal6" class="portfolio-link"
+				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
-						</div> <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-800x350-tablenow-black-635997101560474360.jpg"
+						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						<h4>Dreams</h4>
-						<p class="text-muted">Website Design</p>
+						
+						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- About Section -->
-	<section id="about">
+	<!-- ==================#interested selection ============= -->
+	<section id="interested" class="bg-light-gray">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<h2 class="section-heading">About</h2>
-					<h3 class="section-subheading text-muted">Lorem ipsum dolor
-						sit amet consectetur.</h3>
+			<div class="row" style="margin: 5vh">
+				<div class="col-lg-1 col-xs-1 col-sm-1"></div>
+				<div class="col-lg-10 text-center col-xs-10 col-sm-10">
+					<h2 class="section-heading">Quan tâm nhất</h2>
 				</div>
+				<div class="col-lg-1 col-xs-1 col-sm-1"></div>
 			</div>
 			<div class="row">
-				<div class="col-lg-12">
-					<ul class="timeline">
-						<li>
-							<div class="timeline-image">
-								<img class="img-circle img-responsive" src="img/about/1.jpg"
-									alt="">
+				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+					<a href="#portfolioModal2" class="portfolio-link"
+						data-toggle="modal">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
 							</div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h4>2009-2011</h4>
-									<h4 class="subheading">Our Humble Beginnings</h4>
-								</div>
-								<div class="timeline-body">
-									<p class="text-muted">Lorem ipsum dolor sit amet,
-										consectetur adipisicing elit. Sunt ut voluptatum eius
-										sapiente, totam reiciendis temporibus qui quibusdam,
-										recusandae sit vero unde, sed, incidunt et ea quo dolore
-										laudantium consectetur!</p>
-								</div>
-							</div>
-						</li>
-						<li class="timeline-inverted">
-							<div class="timeline-image">
-								<img class="img-circle img-responsive" src="img/about/2.jpg"
-									alt="">
-							</div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h4>March 2011</h4>
-									<h4 class="subheading">An Agency is Born</h4>
-								</div>
-								<div class="timeline-body">
-									<p class="text-muted">Lorem ipsum dolor sit amet,
-										consectetur adipisicing elit. Sunt ut voluptatum eius
-										sapiente, totam reiciendis temporibus qui quibusdam,
-										recusandae sit vero unde, sed, incidunt et ea quo dolore
-										laudantium consectetur!</p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="timeline-image">
-								<img class="img-circle img-responsive" src="img/about/3.jpg"
-									alt="">
-							</div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h4>December 2012</h4>
-									<h4 class="subheading">Transition to Full Service</h4>
-								</div>
-								<div class="timeline-body">
-									<p class="text-muted">Lorem ipsum dolor sit amet,
-										consectetur adipisicing elit. Sunt ut voluptatum eius
-										sapiente, totam reiciendis temporibus qui quibusdam,
-										recusandae sit vero unde, sed, incidunt et ea quo dolore
-										laudantium consectetur!</p>
-								</div>
-							</div>
-						</li>
-						<li class="timeline-inverted">
-							<div class="timeline-image">
-								<img class="img-circle img-responsive" src="img/about/4.jpg"
-									alt="">
-							</div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h4>July 2014</h4>
-									<h4 class="subheading">Phase Two Expansion</h4>
-								</div>
-								<div class="timeline-body">
-									<p class="text-muted">Lorem ipsum dolor sit amet,
-										consectetur adipisicing elit. Sunt ut voluptatum eius
-										sapiente, totam reiciendis temporibus qui quibusdam,
-										recusandae sit vero unde, sed, incidunt et ea quo dolore
-										laudantium consectetur!</p>
-								</div>
-							</div>
-						</li>
-						<li class="timeline-inverted">
-							<div class="timeline-image">
-								<h4>
-									Be Part <br>Of Our <br>Story!
-								</h4>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Team Section -->
-	<section id="team" class="bg-light-gray">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<h2 class="section-heading">Our Amazing Team</h2>
-					<h3 class="section-subheading text-muted">Lorem ipsum dolor
-						sit amet consectetur.</h3>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="team-member">
-						<img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
-						<h4>Kay Garland</h4>
-						<p class="text-muted">Lead Designer</p>
-						<ul class="list-inline social-buttons">
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-						</ul>
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-5-636015949487216336.jpg"
+						class="img-responsive" alt="">
+					</a>
+					<div class="portfolio-caption">
+						
+						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
 					</div>
 				</div>
-				<div class="col-sm-4">
-					<div class="team-member">
-						<img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
-						<h4>Larry Parker</h4>
-						<p class="text-muted">Lead Marketer</p>
-						<ul class="list-inline social-buttons">
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-						</ul>
+				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+					<a href="#portfolioModal2" class="portfolio-link"
+						data-toggle="modal">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div>
+							<span class="label label-danger noty-safe">10% OFF</span> <img
+								src="https://media.foody.vn/reservation_res_info/s800x350/foody-800x350-tablenow-octobar-636020136062443382.jpg"
+								class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4>Thịt bò tái hấp</h4>
+						<p class="text-muted">276 Trương định / Hoàng mai</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
 					</div>
 				</div>
-				<div class="col-sm-4">
-					<div class="team-member">
-						<img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
-						<h4>Diana Pertersen</h4>
-						<p class="text-muted">Lead Developer</p>
-						<ul class="list-inline social-buttons">
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-						</ul>
+				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+					<a href="#portfolioModal3" class="portfolio-link"
+						data-toggle="modal">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-cover-tablenow-1000x300-iyakazayancha-635799102456685638.jpg "
+						class="img-responsive" alt="">
+					</a>
+					<div class="portfolio-caption">
+						<h4>Treehouse</h4>
+						<p class="text-muted">Website Design</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 text-center">
-					<p class="large text-muted">Lorem ipsum dolor sit amet,
-						consectetur adipisicing elit. Aut eaque, laboriosam veritatis,
-						quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+					<a href="#portfolioModal2" class="portfolio-link"
+						data-toggle="modal">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-850x350-tablenow-dakgalbi-636020400489865804.jpg"
+						class="img-responsive" alt="">
+					</a>
+					<div class="portfolio-caption">
+						
+						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+					<a href="#portfolioModal2" class="portfolio-link"
+						data-toggle="modal">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-kei-back-635806082869087926.jpg"
+						class="img-responsive" alt="">
+					</a>
+					<div class="portfolio-caption">
+						
+						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+					<a href="#portfolioModal2" class="portfolio-link"
+						data-toggle="modal">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
+						src="https://media.foody.vn/reservation_res_info/s800x350/foody-800x350-tablenow-black-635997101560474360.jpg"
+						class="img-responsive" alt="">
+					</a>
+					<div class="portfolio-caption">
+						
+						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<span class="label label-success label-time-safe">Từ 10:00
+							AM đến 12:30 AM</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -454,287 +700,12 @@
 			</div>
 		</div>
 	</footer>
-
-	<!-- Portfolio Modals -->
-	<!-- Use the modals below to showcase details about your portfolio projects! -->
-
-	<!-- Portfolio Modal 1 -->
-	<div class="portfolio-modal modal fade" id="portfolioModal1"
-		tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="close-modal" data-dismiss="modal">
-					<div class="lr">
-						<div class="rl"></div>
-					</div>
-				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<div class="modal-body">
-								<!-- Project Details Go Here -->
-								<h2>Project Name</h2>
-								<p class="item-intro text-muted">Lorem ipsum dolor sit amet
-									consectetur.</p>
-								<img class="img-responsive img-centered"
-									src="img/portfolio/roundicons-free.png" alt="">
-								<p>Use this area to describe your project. Lorem ipsum dolor
-									sit amet, consectetur adipisicing elit. Est blanditiis dolorem
-									culpa incidunt minus dignissimos deserunt repellat aperiam
-									quasi sunt officia expedita beatae cupiditate, maiores
-									repudiandae, nostrum, reiciendis facere nemo!</p>
-								<p>
-									<strong>Want these icons in this portfolio item
-										sample?</strong>You can download 60 of them for free, courtesy of <a
-										href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>,
-									or you can purchase the 1500 icon set <a
-										href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.
-								</p>
-								<ul class="list-inline">
-									<li>Date: July 2014</li>
-									<li>Client: Round Icons</li>
-									<li>Category: Graphic Design</li>
-								</ul>
-								<button type="button" class="btn btn-primary"
-									data-dismiss="modal">
-									<i class="fa fa-times"></i> Close Project
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Portfolio Modal 2 -->
-	<div class="portfolio-modal modal fade" id="portfolioModal2"
-		tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="close-modal" data-dismiss="modal">
-					<div class="lr">
-						<div class="rl"></div>
-					</div>
-				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<div class="modal-body">
-								<h2>Project Heading</h2>
-								<p class="item-intro text-muted">Lorem ipsum dolor sit amet
-									consectetur.</p>
-								<img class="img-responsive img-centered"
-									src="img/portfolio/startup-framework-preview.png" alt="">
-								<p>
-									<a href="http://designmodo.com/startup/?u=787">Startup
-										Framework</a> is a website builder for professionals. Startup
-									Framework contains components and complex blocks (PSD+HTML
-									Bootstrap themes and templates) which can easily be integrated
-									into almost any design. All of these components are made in the
-									same style, and can easily be integrated into projects,
-									allowing you to create hundreds of solutions for your future
-									projects.
-								</p>
-								<p>
-									You can preview Startup Framework <a
-										href="http://designmodo.com/startup/?u=787">here</a>.
-								</p>
-								<button type="button" class="btn btn-primary"
-									data-dismiss="modal">
-									<i class="fa fa-times"></i> Close Project
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Portfolio Modal 3 -->
-	<div class="portfolio-modal modal fade" id="portfolioModal3"
-		tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="close-modal" data-dismiss="modal">
-					<div class="lr">
-						<div class="rl"></div>
-					</div>
-				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<div class="modal-body">
-								<!-- Project Details Go Here -->
-								<h2>Project Name</h2>
-								<p class="item-intro text-muted">Lorem ipsum dolor sit amet
-									consectetur.</p>
-								<img class="img-responsive img-centered"
-									src="img/portfolio/treehouse-preview.png" alt="">
-								<p>
-									Treehouse is a free PSD web template built by <a
-										href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>.
-									This is bright and spacious design perfect for people or
-									startup companies looking to showcase their apps or other
-									projects.
-								</p>
-								<p>
-									You can download the PSD template in this portfolio sample item
-									at <a
-										href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.
-								</p>
-								<button type="button" class="btn btn-primary"
-									data-dismiss="modal">
-									<i class="fa fa-times"></i> Close Project
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Portfolio Modal 4 -->
-	<div class="portfolio-modal modal fade" id="portfolioModal4"
-		tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="close-modal" data-dismiss="modal">
-					<div class="lr">
-						<div class="rl"></div>
-					</div>
-				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<div class="modal-body">
-								<!-- Project Details Go Here -->
-								<h2>Project Name</h2>
-								<p class="item-intro text-muted">Lorem ipsum dolor sit amet
-									consectetur.</p>
-								<img class="img-responsive img-centered"
-									src="img/portfolio/golden-preview.png" alt="">
-								<p>
-									Start Bootstrap's Agency theme is based on Golden, a free PSD
-									website template built by <a
-										href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>.
-									Golden is a modern and clean one page web template that was
-									made exclusively for Best PSD Freebies. This template has a
-									great portfolio, timeline, and meet your team sections that can
-									be easily modified to fit your needs.
-								</p>
-								<p>
-									You can download the PSD template in this portfolio sample item
-									at <a
-										href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.
-								</p>
-								<button type="button" class="btn btn-primary"
-									data-dismiss="modal">
-									<i class="fa fa-times"></i> Close Project
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Portfolio Modal 5 -->
-	<div class="portfolio-modal modal fade" id="portfolioModal5"
-		tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="close-modal" data-dismiss="modal">
-					<div class="lr">
-						<div class="rl"></div>
-					</div>
-				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<div class="modal-body">
-								<!-- Project Details Go Here -->
-								<h2>Project Name</h2>
-								<p class="item-intro text-muted">Lorem ipsum dolor sit amet
-									consectetur.</p>
-								<img class="img-responsive img-centered"
-									src="img/portfolio/escape-preview.png" alt="">
-								<p>
-									Escape is a free PSD web template built by <a
-										href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>.
-									Escape is a one page web template that was designed with
-									agencies in mind. This template is ideal for those looking for
-									a simple one page solution to describe your business and offer
-									your services.
-								</p>
-								<p>
-									You can download the PSD template in this portfolio sample item
-									at <a
-										href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.
-								</p>
-								<button type="button" class="btn btn-primary"
-									data-dismiss="modal">
-									<i class="fa fa-times"></i> Close Project
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Portfolio Modal 6 -->
-	<div class="portfolio-modal modal fade" id="portfolioModal6"
-		tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="close-modal" data-dismiss="modal">
-					<div class="lr">
-						<div class="rl"></div>
-					</div>
-				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<div class="modal-body">
-								<!-- Project Details Go Here -->
-								<h2>Project Name</h2>
-								<p class="item-intro text-muted">Lorem ipsum dolor sit amet
-									consectetur.</p>
-								<img class="img-responsive img-centered"
-									src="img/portfolio/dreams-preview.png" alt="">
-								<p>
-									Dreams is a free PSD web template built by <a
-										href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>.
-									Dreams is a modern one page web template designed for almost
-									any purpose. Itâs a beautiful template thatâs designed with
-									the Bootstrap framework in mind.
-								</p>
-								<p>
-									You can download the PSD template in this portfolio sample item
-									at <a
-										href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.
-								</p>
-								<button type="button" class="btn btn-primary"
-									data-dismiss="modal">
-									<i class="fa fa-times"></i> Close Project
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	<!-- Bootstrap -->
+	<script
+		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<!-- jQuery -->
-	<script src="<%=contextPath%>/lib/jquery/jquery.min.js"></script>
-	<script src="<%=contextPath%>/lib/jquery/jquery.timepicker.js"></script>
-
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 	<!-- Bootstrap Core JavaScript -->
 	<script src="<%=contextPath%>/lib/bootstrap/js/bootstrap.min.js"></script>
 

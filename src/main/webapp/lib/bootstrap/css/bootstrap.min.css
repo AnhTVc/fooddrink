@@ -4944,7 +4944,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    border-radius: .25em
+    /* border-radius: .25em */
 }
 a.label:focus,
 a.label:hover {
