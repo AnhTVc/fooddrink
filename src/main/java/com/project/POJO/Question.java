@@ -10,6 +10,7 @@ public class Question {
 	private String content;
 	private String mailContact;
 	private String timeCreate;
+	private int status; //Trạng thái đã xử lý hay chưa
 	private int subject; //Đối tượng người dùng gửi yêu cầu: 1 - khách hàng, 2 - nhà hàng, 0 chưa xác định
 	public String getIdQuestion() {
 		return idQuestion;
@@ -46,5 +47,11 @@ public class Question {
 	}
 	public void setSubject(int subject) {
 		this.subject = subject;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
 	}
 }
