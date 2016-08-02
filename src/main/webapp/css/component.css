@@ -68,7 +68,7 @@
 	top: 0;
 	padding: 0;
 	margin: 0;
-	line-height: 10vh;
+	line-height: 8vh;
 	text-align: center;
 	cursor: pointer;
 }
@@ -86,9 +86,9 @@
 
 .sb-icon-search {
 	color: #fff;
-	background: #e67e22;
+	background: #935504;
 	z-index: 90;
-	font-size: 22px;
+	font-size: 18px;
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;

@@ -701,17 +701,16 @@
 		</div>
 	</footer>
 	<!-- Bootstrap -->
-	<script
-		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 	<!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+	<script src="<%=contextPath%>/lib/jquery/jquery.min.js"></script>
+	<script src="<%=contextPath%>/lib/jquery/jquery-ui.js"></script>
 	<!-- Bootstrap Core JavaScript -->
 	<script src="<%=contextPath%>/lib/bootstrap/js/bootstrap.min.js"></script>
 
 	<!-- Plugin JavaScript -->
 	<script
-		src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+		src="<%=contextPath%>/lib/jquery/jquery.easing.min.js"></script>
 
 	<!-- Contact Form JavaScript -->
 	<script src="js/jqBootstrapValidation.js"></script>

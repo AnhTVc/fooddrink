@@ -60,7 +60,7 @@ a:hover {
     margin: 0 auto
 }
 .bg-light-gray {
-    background-color: #eee
+    background-color: #F7F7EF
 }
 .bg-darkest-gray {
     background-color: #222
@@ -549,7 +549,7 @@ aside.clients img {
     margin: 50px auto
 }
 section#contact {
-    background-color: #222;
+    background-color: #EDECD7;
     background-image: url(../img/map-image.png);
     background-position: center;
     background-repeat: no-repeat
