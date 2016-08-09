@@ -3,5 +3,25 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+	<display-name>Archetype Created Web Application</display-name>
+	<servlet>
+		<servlet-name>AdminRestaurant</servlet-name>
+		<display-name>AdminRestaurant</display-name>
+		<description></description>
+		<servlet-class>com.project.controller.AdminRestaurant</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Restaurant</servlet-name>
+		<display-name>Restaurant</display-name>
+		<description></description>
+		<servlet-class>com.project.controller.Restaurant</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminRestaurant</servlet-name>
+		<url-pattern>/AdminRestaurant</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Restaurant</servlet-name>
+		<url-pattern>/restaurant</url-pattern>
+	</servlet-mapping>
 </web-app>

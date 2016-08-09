@@ -28,7 +28,7 @@
 	<!--  -->
 	<nav id="mainNav"
 		class="navbar navbar-default navbar-custom navbar-fixed-top"
-		style="background-color: #6FA308;">
+		style="background-color: #98A81E">
 	<div class="container">
 		<div class="navbar-header page-scroll">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -46,129 +46,20 @@
 							<button class="btn btn-info btn-lg" type="button">
 								<i class="glyphicon glyphicon-search"></i>
 							</button>
-
 						</span>
 					</div>
-
 				</div>
-
 			</div>
-
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li style="float: center; padding: 0; margin-top: 0.8vh;">
-					<div class="row">
-						<nav class="navbar navbar-default">
-						<div class="container-fluid" style="width: 100vh;">
-							<ul class="nav navbar-nav"
-								style="width: 100%; margin-right: auto; margin-left: 0px;">
-								<li class="col-sm-1"></li>
-								<li class="col-sm-3"><select class="dropbtn"
-									style="text-align: center;">
-										<option value="BADINH">Chọn địa điểm</option>
-										<option value="BADINH">Ba Đình</option>
-
-										<option value="DONGDA">Đống Đa</option>
-
-										<option value="HAIBATRUNG">Hai Bà Trưng</option>
-
-										<option value="HOANGMAI">Hoàng Mai</option>
-
-										<option value="TAYHO">Tây Hồ</option>
-
-										<option value="BAVI">Ba Vì</option>
-
-										<option value="DANPHUONG">Đan Phượng</option>
-
-										<option value="GIALAM">Gia Lâm</option>
-
-										<option value="MELINH">Mê Linh</option>
-
-										<option value="PHUXUYEN">Phú Xuyên</option>
-
-										<option value="QUOCOAI">Quốc Oai</option>
-
-										<option value="THACHTHAT">Thạch Thất</option>
-
-										<option value="THANHTRI">Thanh Trì</option>
-
-										<option value="TULIEM">Từ Liêm</option>
-
-										<option value="SONTAY">Sơn Tây</option>
-
-										<option value="CAUGIAY">Cầu Giấy</option>
-
-										<option value="HADONG">Hà Đông</option>
-
-										<option value="HOANKIEM">Hoàn Kiếm</option>
-
-										<option value="LONGBIEN">Long Biên</option>
-
-										<option value="THANHXUAN">Thanh Xuân</option>
-
-										<option value="CHUONGMY">Chương Mỹ</option>
-
-										<option value="DONGANH">Đông Anh</option>
-
-										<option value="HOAIDUC">Hoài Đức</option>
-
-										<option value="MYDUC">Mỹ Đức</option>
-
-										<option value="PHUCTHO">Phúc Thọ</option>
-
-										<option value="SOCSON">Sóc Sơn</option>
-
-										<option value="THANHOAI">Thanh Oai</option>
-
-										<option value="THUONGTIN">Thường Tín</option>
-
-								</select></li>
-								<li class="col-sm-3"><select class="dropbtn"
-									style="text-align: center;">
-										<option value="">Chọn ngày</option>
-										<%
-											for (int i = 15; i < 31; i += 1) {
-										%>
-										<option value="date">Ngày
-											<%=i%></option>
-										<%
-											}
-										%>
-								</select></li>
-								<li class="col-sm-3"><select class="dropbtn"
-									style="text-align: center;">
-										<option value="" class="dropdown-header">Chọn khung
-											giờ</option>
-										<%
-											Date date = new SimpleDateFormat("hh:mm").parse("05:30");
-											SimpleDateFormat ft = new SimpleDateFormat("hh:mm");
-											Calendar cal = Calendar.getInstance();
-											cal.setTime(date);
-											for (int i = 0; i <= 12; ++i) {
-												cal.add(Calendar.MINUTE, 30);
-												Date tempDate = cal.getTime();
-										%>
-										<option value="time"><%=ft.format(tempDate)%> AM
-										</option>
-										<%
-											}
-										%>
-								</select></li>
-								<li class="col-sm-1">
-									<form style="width: 100%; height: 7vh;">
-										<input class="sb-search-submit" type="submit" value="">
-										<span class="sb-icon-search"></span>
-									</form>
-								</li>
-								<li class="col-sm-1"></li>
-							</ul>
-						</div>
-						</nav>
-					</div>
-				</li>
+				<li class="hidden"><a href="#page-top"></a></li>
+				<!-- 				<li><a class="page-scroll" href="#portfolio">Ưu đãi đặc
+						biệt</a></li>
+				<li><a class="page-scroll" href="#lastsafe">Ưu đãi mới nhất</a></li>
+				<li><a class="page-scroll" href="#interested">Quan tâm nhất</a></li> -->
 				<li><a class="page-scroll" href="#contact">Đăng nhập</a></li>
 			</ul>
 		</div>
@@ -176,11 +67,120 @@
 	</div>
 	<!-- /.container-fluid --> </nav>
 	<div class="container">
-		<div class="intro-text"></div>
+		<div class="intro-text">
+			<div class="row">
+				<nav class="navbar navbar-default" style="margin-top: 100px;">
+				<div class="container-fluid" style="width: 100%;">
+					<ul class="nav navbar-nav"
+						style="width: 100%; margin-right: auto; margin-left: 0px;">
+						<li class="col-sm-1"></li>
+						<li class="col-sm-3"><select class="dropbtn"
+							style="text-align: center;">
+								<option value="BADINH">Chọn địa điểm</option>
+								<option value="BADINH">Ba Đình</option>
+
+								<option value="DONGDA">Đống Đa</option>
+
+								<option value="HAIBATRUNG">Hai Bà Trưng</option>
+
+								<option value="HOANGMAI">Hoàng Mai</option>
+
+								<option value="TAYHO">Tây Hồ</option>
+
+								<option value="BAVI">Ba Vì</option>
+
+								<option value="DANPHUONG">Đan Phượng</option>
+
+								<option value="GIALAM">Gia Lâm</option>
+
+								<option value="MELINH">Mê Linh</option>
+
+								<option value="PHUXUYEN">Phú Xuyên</option>
+
+								<option value="QUOCOAI">Quốc Oai</option>
+
+								<option value="THACHTHAT">Thạch Thất</option>
+
+								<option value="THANHTRI">Thanh Trì</option>
+
+								<option value="TULIEM">Từ Liêm</option>
+
+								<option value="SONTAY">Sơn Tây</option>
+
+								<option value="CAUGIAY">Cầu Giấy</option>
+
+								<option value="HADONG">Hà Đông</option>
+
+								<option value="HOANKIEM">Hoàn Kiếm</option>
+
+								<option value="LONGBIEN">Long Biên</option>
+
+								<option value="THANHXUAN">Thanh Xuân</option>
+
+								<option value="CHUONGMY">Chương Mỹ</option>
+
+								<option value="DONGANH">Đông Anh</option>
+
+								<option value="HOAIDUC">Hoài Đức</option>
+
+								<option value="MYDUC">Mỹ Đức</option>
+
+								<option value="PHUCTHO">Phúc Thọ</option>
+
+								<option value="SOCSON">Sóc Sơn</option>
+
+								<option value="THANHOAI">Thanh Oai</option>
+
+								<option value="THUONGTIN">Thường Tín</option>
+
+						</select></li>
+						<li class="col-sm-3"><select class="dropbtn"
+							style="text-align: center;">
+								<option value="">Chọn ngày</option>
+								<%
+									for (int i = 15; i < 31; i += 1) {
+								%>
+								<option value="date">Ngày
+									<%=i%></option>
+								<%
+									}
+								%>
+						</select></li>
+						<li class="col-sm-3"><select class="dropbtn"
+							style="text-align: center;">
+								<option value="" class="dropdown-header">Chọn khung giờ</option>
+								<%
+									Date date = new SimpleDateFormat("hh:mm").parse("05:30");
+									SimpleDateFormat ft = new SimpleDateFormat("hh:mm");
+									Calendar cal = Calendar.getInstance();
+									cal.setTime(date);
+									for (int i = 0; i <= 12; ++i) {
+										cal.add(Calendar.MINUTE, 30);
+										Date tempDate = cal.getTime();
+								%>
+								<option value="time"><%=ft.format(tempDate)%> AM
+								</option>
+								<%
+									}
+								%>
+						</select></li>
+						<li class="col-sm-1">
+							<form style="width: 100%; height: 7vh;">
+								<input class="sb-search-submit" type="submit" value="">
+								<span class="sb-icon-search"></span>
+							</form>
+						</li>
+						<li class="col-sm-1"></li>
+					</ul>
+				</div>
+				</nav>
+			</div>
+
+		</div>
 	</div>
 
 	<!-- Content -->
-	<div class="container" style="margin-top: 150px;">
+	<div class="container">
 		<div class="row">
 
 			<div class="col-sm-8 col-md-8 col-lg-8 col-xs-12">
@@ -228,7 +228,8 @@
 								onclick="toggle_visibility('image_restaurant');">Hình ảnh</a></li>
 							<li><a href="#"
 								onclick="toggle_visibility('menu_restaurant');">Thực đơn</a></li>
-							<li><a href="#" id="" class="intro_restaurant"
+							<li><a href="#" id=""
+								class="intro_restaurant"
 								onclick="toggle_visibility('restaurant_intro');">Thông tin</a></li>
 						</ul>
 					</div>
@@ -327,7 +328,6 @@
 					<div class="form-title">
 						<small style="font-size: 15px;">Giảm giá <span
 							style="color: #ed1c24; font-weight: bold;">20%</span>
-							</small>
 					</div>
 					<hr class="dotted-reverse">
 					<div class="form-horizontal">
@@ -436,22 +436,8 @@
 				e.style.display = 'block';
 		}
 	</script>
-	<!-- Bootstrap -->
-
+	<!-- The end Content -->
 	<!-- jQuery -->
-	<script src="<%=contextPath%>/lib/jquery/jquery.min.js"></script>
-	<script src="<%=contextPath%>/lib/jquery/jquery-ui.js"></script>
-	<!-- Bootstrap Core JavaScript -->
-	<script src="<%=contextPath%>/lib/bootstrap/js/bootstrap.min.js"></script>
-
-	<!-- Plugin JavaScript -->
-	<script src="<%=contextPath%>/lib/jquery/jquery.easing.min.js"></script>
-
-	<!-- Contact Form JavaScript -->
-	<script src="js/jqBootstrapValidation.js"></script>
-	<script src="js/contact_me.js"></script>
-	<script src="js/customer.js"></script>
-	<!-- Theme JavaScript -->
-	<script src="<%=contextPath%>/js/agency.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </body>
 </html>
