@@ -7,38 +7,52 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.tomcat.jdbc.pool.PoolProperties;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class AdminRestaurant
  */
 public class AdminRestaurant extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AdminRestaurant() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher =
-			       getServletContext().getRequestDispatcher("/url/adminrestaurant.jsp");
-		dispatcher.forward(request, response);
-		
+	public AdminRestaurant() {
+		super();
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	@SuppressWarnings("deprecation")
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		HttpSession ses = request.getSession(true);
+		System.out.print((String) ses.getValue("id_boss"));
+
+		RequestDispatcher dispatcher = getServletContext()
+				.getRequestDispatcher("/url/adminrestaurant.jsp");
+		dispatcher.forward(request, response);
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	@SuppressWarnings("deprecation")
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("export dopost called");
+		HttpSession ses = request.getSession(true);
+		System.out.print((String) ses.getValue("id_boss"));
+
+		RequestDispatcher dispatcher = getServletContext()
+				.getRequestDispatcher("/url/adminrestaurant.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }

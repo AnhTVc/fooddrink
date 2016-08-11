@@ -31,7 +31,7 @@ public class DBPool {
 		Properties defaultProps = new Properties();
 		FileInputStream in;
 		try {
-			in = new FileInputStream("DBCongfig.properties");
+			in = new FileInputStream("D://Data//eclipseworkspace//fooddrink//src//main//java//com//project//DAO//DBConfig.properties");
 			defaultProps.load(in);
 			in.close();
 			Class.forName(defaultProps.getProperty("jdbc_driver"));

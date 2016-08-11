@@ -28,7 +28,7 @@
 	<!--  -->
 	<nav id="mainNav"
 		class="navbar navbar-default navbar-custom navbar-fixed-top"
-		style="background-color: #6FA308;">
+		style="background-color: #A3410D;">
 	<div class="container">
 		<div class="navbar-header page-scroll">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"

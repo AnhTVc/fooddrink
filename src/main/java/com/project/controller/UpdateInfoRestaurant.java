@@ -9,19 +9,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Restaurant
+ * Servlet implementation class UpdateInfoRestaurant
  */
-public class Restaurant extends HttpServlet {
+public class UpdateInfoRestaurant extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Restaurant() {
+    public UpdateInfoRestaurant() {
         super();
         // TODO Auto-generated constructor stub
-        
-        
     }
 
 	/**
@@ -29,16 +27,17 @@ public class Restaurant extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher dispatcher =
-			       getServletContext().getRequestDispatcher("/url/restaurant.jsp");
-		dispatcher.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.print(request.getAttribute("email"));
+		
+
+		RequestDispatcher dispatcher = getServletContext()
+				.getRequestDispatcher("/url/updateInfoRestaurant.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }

@@ -23,14 +23,14 @@
 <link href="<%=contextPath%>/css/agency.min.css" rel="stylesheet">
 <link href="<%=contextPath%>/css/component.css" rel="stylesheet">
 <link href="<%=contextPath%>/css/customer.css" rel="stylesheet">
+<link href="<%=contextPath%>/css/bootstrap-modal.css" rel="stylesheet">
 </head>
 <body>
 <body id="page-top" class="index">
 
 	<!-- Navigation -->
 	<nav id="mainNav"
-		class="navbar navbar-default navbar-custom navbar-fixed-top"
-		style="background-color: #6FA308">
+		class="navbar navbar-default navbar-custom navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header page-scroll">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -58,15 +58,24 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="hidden"><a href="#page-top"></a></li>
-					<li><a class="page-scroll" href="#portfolio" style="text-transform: uppercase;">Ưu đãi đặc
-							biệt</a></li>
-					<li><a class="page-scroll" href="#lastsafe" style="text-transform: uppercase;">Ưu đãi mới
-							nhất</a></li>
-					<li><a class="page-scroll" href="#interested" style="text-transform: uppercase;">Quan tâm
-							nhất</a></li>
-					<li><a class="page-scroll" href="#contact" style="text-transform: uppercase;">Đăng nhập</a></li>
+					<li><a class="page-scroll" href="#portfolio"
+						style="text-transform: uppercase;">Ưu đãi đặc biệt</a></li>
+					<li><a class="page-scroll" href="#lastsafe"
+						style="text-transform: uppercase;">Ưu đãi mới nhất</a></li>
+					<li><a class="page-scroll" href="#interested"
+						style="text-transform: uppercase;">Quan tâm nhất</a></li>
+					<li><a class="page-scroll" href="login"
+						style="text-transform: uppercase;">Đăng nhập/Đăng ký</a></li>
+					<!-- Modal login/register -->
+
+					<!-- ./ -->
+
+					<li><a class="page-scroll" href="#contact"
+						style="text-transform: uppercase;">Liên hệ</a></li>
+
 				</ul>
 			</div>
+
 			<!-- /.navbar-collapse -->
 		</div>
 		<!-- /.container-fluid -->
@@ -76,14 +85,14 @@
 		<div class="container">
 			<div class="intro-text">
 				<div class="row">
-					<nav class="navbar navbar-default" style="margin-top: 100px;">
+					<nav class="navbar navbar-default" style="margin-top: 80px;">
 						<div class="container-fluid" style="width: 100%;">
 							<ul class="nav navbar-nav"
 								style="width: 100%; margin-right: auto; margin-left: 0px;">
-								<li class="col-sm-1"></li>
-								<li class="col-sm-3"><select class="dropbtn"
-									style="text-align: center;">
-										<option value="BADINH">Chọn địa điểm</option>
+								<li class="col-sm-3"></li>
+								<li class="col-sm-2" style="text-align: center;"><select
+									class="dropbtn" style="text-align: center;">
+										<option>Chọn địa điểm</option>
 										<option value="BADINH">Ba Đình</option>
 
 										<option value="DONGDA">Đống Đa</option>
@@ -141,7 +150,7 @@
 										<option value="THUONGTIN">Thường Tín</option>
 
 								</select></li>
-								<li class="col-sm-3"><select class="dropbtn"
+								<li class="col-sm-2"><select class="dropbtn"
 									style="text-align: center;">
 										<option value="">Chọn ngày</option>
 										<%
@@ -153,9 +162,10 @@
 											}
 										%>
 								</select></li>
-								<li class="col-sm-3"><select class="dropbtn"
+								<li class="col-sm-2"><select class="dropbtn"
 									style="text-align: center;">
-										<option value="" class="dropdown-header">Chọn khung giờ</option>
+										<option value="" class="dropdown-header">Chọn khung
+											giờ</option>
 										<%
 											Date date = new SimpleDateFormat("hh:mm").parse("05:30");
 											SimpleDateFormat ft = new SimpleDateFormat("hh:mm");
@@ -195,27 +205,27 @@
 				<div class="col-sm-2 col-md-2 col-xs-2 col-lg-2"
 					style="text-align: center;">
 					<img alt="" src="img/search.png" class=" img-responsive"
-						style="height: 14vh; width: 14vh; float: center; display: block; margin: 0 auto;">
-					<p style="font-size: 16px;">Tìm kiếm ưu đãi</p>
+						style="height: 6vh; width: 6vh; float: center; display: block; margin: 0 auto;">
+					<p style="font-size: 13px;">Tìm kiếm ưu đãi</p>
 				</div>
 				<div class="col-sm-2 col-md-2 col-xs-2 col-lg-2"></div>
 				<div class="col-sm-2 col-md-2 col-xs-2 col-lg-2"
 					style="text-align: center;">
 					<img alt="" src="img/menu.png" class="img-responsive"
-						style="height: 14vh; width: 14vh; float: center; display: block; margin: 0 auto;">
-					<p style="font-size: 16px;">Đặt bàn nhanh chóng</p>
+						style="height: 6vh; width: 6vh; float: center; display: block; margin: 0 auto;">
+					<p style="font-size: 13px;">Đặt bàn nhanh chóng</p>
 				</div>
 				<div class="col-sm-2 col-md-2 col-xs-2 col-lg-2"></div>
 				<div class="col-sm-2 col-md-2 col-xs-2 col-lg-2"
 					style="text-align: center;">
 					<img alt="" src="img/piggy-bank.png" class=" img-responsive"
-						style="height: 14vh; width: 14vh; float: center; display: block; margin: 0 auto;">
-					<p style="font-size: 16px;">Tiết kiệm thả ga</p>
+						style="height: 6vh; width: 6vh; float: center; display: block; margin: 0 auto;">
+					<p style="font-size: 13px;">Tiết kiệm thả ga</p>
 				</div>
 				<div class="col-sm-1 col-md-1 col-xs-1 col-lg-1"></div>
 
 			</div>
-			<div class="row" style="margin-top: 50px; margin-bottom: 30px; ">
+			<div class="row" style="margin-top: 50px; margin-bottom: 30px;">
 				<div class="col-lg-1 col-xs-1 col-sm-1"></div>
 				<div class="col-lg-10 text-center col-xs-8 col-sm-10">
 					<h2 class="section-heading">Ưu đãi đặc biệt</h2>
@@ -225,8 +235,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4 col-sm-6 portfolio-item"
-					style="padding-right: 15px; padding-left: 15px">
+				<div class="col-md-3 col-sm-6 portfolio-item"
+					style="padding: 5px; border: 1px solid #ddd; border-radius: 2px;">
 					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
@@ -234,59 +244,24 @@
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
 						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-5-636015949487216336.jpg"
+						src="https://media.foody.vn/biz_banner/foody-foody-800x350_black-stone-bbq-635979749774097616-636051255363594458.jpg"
 						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
 						<h4 style="color: #4B8706">Quán nướng</h4>
-						<p style="font-style: normal; font-size: 14px; margin-bottom: 10px; color: #56380E">100 Lý thái tổ / Hai bà trưng</p>
+						<p
+							style="font-style: normal; font-size: 14px; margin-bottom: 10px; color: #56380E">100
+							Lý thái tổ / Hai bà trưng</p>
 						<span class="label label-success label-time-safe">Từ 10:00
 							AM đến 12:30 AM</span>
-							
-						<p style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp dụng tất cả các ngày trong tuần</p>
+
+						<p
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item"
-					style="padding-right: 15px; padding-left: 15px">
-					<a href="#portfolioModal2" class="portfolio-link"
-						data-toggle="modal">
-						<div class="portfolio-hover">
-							<div class="portfolio-hover-content">
-								<i class="fa fa-plus fa-3x"></i>
-							</div>
-						</div>
-						<div>
-							<span class="label label-danger noty-safe">10% OFF</span> <img
-								src="https://media.foody.vn/reservation_res_info/s800x350/foody-800x350-tablenow-octobar-636020136062443382.jpg"
-								class="img-responsive" alt="">
-						</div>
-					</a>
-					<div class="portfolio-caption">
-						<p class="text-muted">276 Trương định / Hoàng mai</p>
-						<span class="label label-success label-time-safe">Từ 10:00
-							AM đến 12:30 AM</span>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item"
-					style="padding-right: 15px; padding-left: 15px">
-					<a href="#portfolioModal3" class="portfolio-link"
-						data-toggle="modal">
-						<div class="portfolio-hover">
-							<div class="portfolio-hover-content">
-								<i class="fa fa-plus fa-3x"></i>
-							</div>
-						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-cover-tablenow-1000x300-iyakazayancha-635799102456685638.jpg "
-						class="img-responsive" alt="">
-					</a>
-					<div class="portfolio-caption">
-						<p class="text-muted">Website Design</p>
-						<span class="label label-success label-time-safe">Từ 10:00
-							AM đến 12:30 AM</span>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item"
-					style="padding-right: 15px; padding-left: 15px">
+				<div class="col-md-3 col-sm-6 portfolio-item"
+					style="padding: 5px; border: 1px solid #ddd; border-radius: 2px;">
 					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
@@ -294,17 +269,24 @@
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
 						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-850x350-tablenow-dakgalbi-636020400489865804.jpg"
+						src="https://media.foody.vn/biz_banner/foody-tung-bung-khai-truong-buffet-dimsum-kem-lau-hong-kong-kowloon%20(15)-636051255528798749.jpg"
 						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<h4 style="color: #4B8706">Quán nướng</h4>
+						<p
+							style="font-style: normal; font-size: 14px; margin-bottom: 10px; color: #56380E">100
+							Lý thái tổ / Hai bà trưng</p>
 						<span class="label label-success label-time-safe">Từ 10:00
 							AM đến 12:30 AM</span>
+
+						<p
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item"
-					style="padding-right: 15px; padding-left: 15px">
+				<div class="col-md-3 col-sm-6 portfolio-item"
+					style="padding: 5px; border: 1px solid #ddd; border-radius: 2px;">
 					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
@@ -312,17 +294,24 @@
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
 						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-kei-back-635806082869087926.jpg"
+						src="https://media.foody.vn/biz_banner/foody-dishes-french-grill-restaurant-hanoi-636051255674503004.jpg"
 						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<h4 style="color: #4B8706">Quán nướng</h4>
+						<p
+							style="font-style: normal; font-size: 14px; margin-bottom: 10px; color: #56380E">100
+							Lý thái tổ / Hai bà trưng</p>
 						<span class="label label-success label-time-safe">Từ 10:00
 							AM đến 12:30 AM</span>
+
+						<p
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item"
-					style="padding-right: 15px; padding-left: 15px">
+				<div class="col-md-3 col-sm-6 portfolio-item"
+					style="padding: 5px; border: 1px solid #ddd; border-radius: 2px;">
 					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
@@ -330,14 +319,20 @@
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
 						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-800x350-tablenow-black-635997101560474360.jpg"
+						src="https://media.foody.vn/biz_banner/foody-foody-mobile-640x400_sashi-mi2-jp-744-635693574210667013-636051255828475275.jpg"
 						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						
-						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<h4 style="color: #4B8706">Quán nướng</h4>
+						<p
+							style="font-style: normal; font-size: 14px; margin-bottom: 10px; color: #56380E">100
+							Lý thái tổ / Hai bà trưng</p>
 						<span class="label label-success label-time-safe">Từ 10:00
 							AM đến 12:30 AM</span>
+
+						<p
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
 			</div>
@@ -355,7 +350,8 @@
 				<div class="col-lg-1 col-xs-1 col-sm-1"></div>
 			</div>
 			<div class="row">
-				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+				<div class="col-md-3 col-sm-6 portfolio-item"
+					style="padding: 5px; border: 1px solid #ddd; border-radius: 2px;">
 					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
@@ -363,56 +359,24 @@
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
 						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-5-636015949487216336.jpg"
+						src="https://media.foody.vn/biz_banner/foody-foody-800x350_black-stone-bbq-635979749774097616-636051255363594458.jpg"
 						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						
-						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<h4 style="color: #4B8706">Quán nướng</h4>
+						<p
+							style="font-style: normal; font-size: 14px; margin-bottom: 10px; color: #56380E">100
+							Lý thái tổ / Hai bà trưng</p>
 						<span class="label label-success label-time-safe">Từ 10:00
 							AM đến 12:30 AM</span>
+
+						<p
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
-					<a href="#portfolioModal2" class="portfolio-link"
-						data-toggle="modal">
-						<div class="portfolio-hover">
-							<div class="portfolio-hover-content">
-								<i class="fa fa-plus fa-3x"></i>
-							</div>
-						</div>
-						<div>
-							<span class="label label-danger noty-safe">10% OFF</span> <img
-								src="https://media.foody.vn/reservation_res_info/s800x350/foody-800x350-tablenow-octobar-636020136062443382.jpg"
-								class="img-responsive" alt="">
-						</div>
-					</a>
-					<div class="portfolio-caption">
-						<h4>Thịt bò tái hấp</h4>
-						<p class="text-muted">276 Trương định / Hoàng mai</p>
-						<span class="label label-success label-time-safe">Từ 10:00
-							AM đến 12:30 AM</span>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
-					<a href="#portfolioModal3" class="portfolio-link"
-						data-toggle="modal">
-						<div class="portfolio-hover">
-							<div class="portfolio-hover-content">
-								<i class="fa fa-plus fa-3x"></i>
-							</div>
-						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-cover-tablenow-1000x300-iyakazayancha-635799102456685638.jpg "
-						class="img-responsive" alt="">
-					</a>
-					<div class="portfolio-caption">
-						<h4>Treehouse</h4>
-						<p class="text-muted">Website Design</p>
-						<span class="label label-success label-time-safe">Từ 10:00
-							AM đến 12:30 AM</span>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+				<div class="col-md-3 col-sm-6 portfolio-item"
+					style="padding: 5px; border: 1px solid #ddd; border-radius: 2px;">
 					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
@@ -420,17 +384,24 @@
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
 						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-850x350-tablenow-dakgalbi-636020400489865804.jpg"
+						src="https://media.foody.vn/biz_banner/foody-tung-bung-khai-truong-buffet-dimsum-kem-lau-hong-kong-kowloon%20(15)-636051255528798749.jpg"
 						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						
-						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<h4 style="color: #4B8706">Quán nướng</h4>
+						<p
+							style="font-style: normal; font-size: 14px; margin-bottom: 10px; color: #56380E">100
+							Lý thái tổ / Hai bà trưng</p>
 						<span class="label label-success label-time-safe">Từ 10:00
 							AM đến 12:30 AM</span>
+
+						<p
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+				<div class="col-md-3 col-sm-6 portfolio-item"
+					style="padding: 5px; border: 1px solid #ddd; border-radius: 2px;">
 					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
@@ -438,17 +409,24 @@
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
 						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-kei-back-635806082869087926.jpg"
+						src="https://media.foody.vn/biz_banner/foody-dishes-french-grill-restaurant-hanoi-636051255674503004.jpg"
 						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						
-						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<h4 style="color: #4B8706">Quán nướng</h4>
+						<p
+							style="font-style: normal; font-size: 14px; margin-bottom: 10px; color: #56380E">100
+							Lý thái tổ / Hai bà trưng</p>
 						<span class="label label-success label-time-safe">Từ 10:00
 							AM đến 12:30 AM</span>
+
+						<p
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+				<div class="col-md-3 col-sm-6 portfolio-item"
+					style="padding: 5px; border: 1px solid #ddd; border-radius: 2px;">
 					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
@@ -456,14 +434,20 @@
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
 						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-800x350-tablenow-black-635997101560474360.jpg"
+						src="https://media.foody.vn/biz_banner/foody-foody-mobile-640x400_sashi-mi2-jp-744-635693574210667013-636051255828475275.jpg"
 						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						
-						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<h4 style="color: #4B8706">Quán nướng</h4>
+						<p
+							style="font-style: normal; font-size: 14px; margin-bottom: 10px; color: #56380E">100
+							Lý thái tổ / Hai bà trưng</p>
 						<span class="label label-success label-time-safe">Từ 10:00
 							AM đến 12:30 AM</span>
+
+						<p
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
 			</div>
@@ -481,7 +465,8 @@
 				<div class="col-lg-1 col-xs-1 col-sm-1"></div>
 			</div>
 			<div class="row">
-				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+				<div class="col-md-3 col-sm-6 portfolio-item"
+					style="padding: 5px; border: 1px solid #ddd; border-radius: 2px;">
 					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
@@ -489,56 +474,24 @@
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
 						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-5-636015949487216336.jpg"
+						src="https://media.foody.vn/biz_banner/foody-foody-800x350_black-stone-bbq-635979749774097616-636051255363594458.jpg"
 						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						
-						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<h4 style="color: #4B8706">Quán nướng</h4>
+						<p
+							style="font-style: normal; font-size: 14px; margin-bottom: 10px; color: #56380E">100
+							Lý thái tổ / Hai bà trưng</p>
 						<span class="label label-success label-time-safe">Từ 10:00
 							AM đến 12:30 AM</span>
+
+						<p
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
-					<a href="#portfolioModal2" class="portfolio-link"
-						data-toggle="modal">
-						<div class="portfolio-hover">
-							<div class="portfolio-hover-content">
-								<i class="fa fa-plus fa-3x"></i>
-							</div>
-						</div>
-						<div>
-							<span class="label label-danger noty-safe">10% OFF</span> <img
-								src="https://media.foody.vn/reservation_res_info/s800x350/foody-800x350-tablenow-octobar-636020136062443382.jpg"
-								class="img-responsive" alt="">
-						</div>
-					</a>
-					<div class="portfolio-caption">
-						<h4>Thịt bò tái hấp</h4>
-						<p class="text-muted">276 Trương định / Hoàng mai</p>
-						<span class="label label-success label-time-safe">Từ 10:00
-							AM đến 12:30 AM</span>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
-					<a href="#portfolioModal3" class="portfolio-link"
-						data-toggle="modal">
-						<div class="portfolio-hover">
-							<div class="portfolio-hover-content">
-								<i class="fa fa-plus fa-3x"></i>
-							</div>
-						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-cover-tablenow-1000x300-iyakazayancha-635799102456685638.jpg "
-						class="img-responsive" alt="">
-					</a>
-					<div class="portfolio-caption">
-						<h4>Treehouse</h4>
-						<p class="text-muted">Website Design</p>
-						<span class="label label-success label-time-safe">Từ 10:00
-							AM đến 12:30 AM</span>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+				<div class="col-md-3 col-sm-6 portfolio-item"
+					style="padding: 5px; border: 1px solid #ddd; border-radius: 2px;">
 					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
@@ -546,17 +499,24 @@
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
 						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-850x350-tablenow-dakgalbi-636020400489865804.jpg"
+						src="https://media.foody.vn/biz_banner/foody-tung-bung-khai-truong-buffet-dimsum-kem-lau-hong-kong-kowloon%20(15)-636051255528798749.jpg"
 						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						
-						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<h4 style="color: #4B8706">Quán nướng</h4>
+						<p
+							style="font-style: normal; font-size: 14px; margin-bottom: 10px; color: #56380E">100
+							Lý thái tổ / Hai bà trưng</p>
 						<span class="label label-success label-time-safe">Từ 10:00
 							AM đến 12:30 AM</span>
+
+						<p
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+				<div class="col-md-3 col-sm-6 portfolio-item"
+					style="padding: 5px; border: 1px solid #ddd; border-radius: 2px;">
 					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
@@ -564,17 +524,24 @@
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
 						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-kei-back-635806082869087926.jpg"
+						src="https://media.foody.vn/biz_banner/foody-dishes-french-grill-restaurant-hanoi-636051255674503004.jpg"
 						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						
-						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<h4 style="color: #4B8706">Quán nướng</h4>
+						<p
+							style="font-style: normal; font-size: 14px; margin-bottom: 10px; color: #56380E">100
+							Lý thái tổ / Hai bà trưng</p>
 						<span class="label label-success label-time-safe">Từ 10:00
 							AM đến 12:30 AM</span>
+
+						<p
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6 portfolio-item element-last-safe">
+				<div class="col-md-3 col-sm-6 portfolio-item"
+					style="padding: 5px; border: 1px solid #ddd; border-radius: 2px;">
 					<a href="#portfolioModal2" class="portfolio-link"
 						data-toggle="modal">
 						<div class="portfolio-hover">
@@ -582,14 +549,20 @@
 								<i class="fa fa-plus fa-3x"></i>
 							</div>
 						</div> <span class="label label-danger noty-safe">10% OFF</span> <img
-						src="https://media.foody.vn/reservation_res_info/s800x350/foody-800x350-tablenow-black-635997101560474360.jpg"
+						src="https://media.foody.vn/biz_banner/foody-foody-mobile-640x400_sashi-mi2-jp-744-635693574210667013-636051255828475275.jpg"
 						class="img-responsive" alt="">
 					</a>
 					<div class="portfolio-caption">
-						
-						<p class="text-muted">100 Lý thái tổ / Hai bà trưng</p>
+						<h4 style="color: #4B8706">Quán nướng</h4>
+						<p
+							style="font-style: normal; font-size: 14px; margin-bottom: 10px; color: #56380E">100
+							Lý thái tổ / Hai bà trưng</p>
 						<span class="label label-success label-time-safe">Từ 10:00
 							AM đến 12:30 AM</span>
+
+						<p
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
 			</div>
@@ -709,8 +682,7 @@
 	<script src="<%=contextPath%>/lib/bootstrap/js/bootstrap.min.js"></script>
 
 	<!-- Plugin JavaScript -->
-	<script
-		src="<%=contextPath%>/lib/jquery/jquery.easing.min.js"></script>
+	<script src="<%=contextPath%>/lib/jquery/jquery.easing.min.js"></script>
 
 	<!-- Contact Form JavaScript -->
 	<script src="js/jqBootstrapValidation.js"></script>

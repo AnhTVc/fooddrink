@@ -1,6 +1,6 @@
 package com.project.POJO;
 
-public class Customer {
+public class Customer implements People{
 	private String idCustomer;
 	private String username;
 	private String password;

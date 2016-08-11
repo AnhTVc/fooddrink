@@ -11,6 +11,8 @@ public class Restaurant {
 	private String avatar; //Url ảnh đại diện
 	private ArrayList<GroupMenu> groupMenus; //Danh sách các món ăn
 	private ArrayList<Sale> sales; //Một nhà hàng có nhiều chương trình giảm giá
+	private int statusUpdate;
+	
 	public String getIdRestaurant() {
 		return idRestaurant;
 	}
@@ -58,6 +60,12 @@ public class Restaurant {
 	}
 	public void setSales(ArrayList<Sale> sales) {
 		this.sales = sales;
+	}
+	public int getStatusUpdate() {
+		return statusUpdate;
+	}
+	public void setStatusUpdate(int statusUpdate) {
+		this.statusUpdate = statusUpdate;
 	}
 	
 }

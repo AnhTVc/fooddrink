@@ -183,9 +183,10 @@
 			<!-- /.row -->
 			<div class="row"
 				style="float: center; text-align: center; margin-bottom: 15px;">
-				<div class="col-lg-8">
+				<div class="col-lg-2"></div>
+				<div class="col-lg-6" style="float: center;">
 					<img
-						src="http://offpeak.vn/assets/restaurant/512/banners/be271d1110be47fc3c9fa3a6646fd8ca.jpg"
+						src="<%=contextPath%>/img/image-not-found.png"
 						class="img-responsive" alt="">
 				</div>
 				<div class="col-lg-4" style="border-radius: 0">
@@ -397,7 +398,7 @@
 							<i class="fa fa-bell fa-fw"></i> Thông tin đặt chỗ
 						</div>
 						<!-- /.panel-heading -->
-						<div class="panel-body">
+						<%-- <div class="panel-body">
 							<div class="list-group" style="text-align: center;">
 								<h5>Trong ngày</h5>
 								<%
@@ -416,7 +417,7 @@
 							<!-- /.list-group -->
 							<h5 style="text-align: center;">Xem thêm ngày</h5>
 							<a href="#" class="btn btn-default btn-block">View All Alerts</a>
-						</div>
+						</div> --%>
 						<!-- /.panel-body -->
 					</div>
 
@@ -442,7 +443,7 @@
 							</div>
 						</div>
 						<!-- /.panel-heading -->
-						<div class="panel-body" id="content-reservation">
+<!-- 						<div class="panel-body" id="content-reservation">
 							<table class="table table-bordered">
 								<tbody>
 									<tr>
@@ -477,7 +478,7 @@
 								style="border-radius: 0;">Hủy đơn</button>
 							<button class="btn btn-default btn-danger"
 								style="border-radius: 0;">Report</button>
-						</div>
+						</div> -->
 						<!-- /.panel-body -->
 					</div>
 					<!-- /.panel -->
