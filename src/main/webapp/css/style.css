@@ -23,9 +23,9 @@ a:hover {
 }
 
 .form {
-	background-image:
-		url(http://offpeak.vn/assets/restaurant/511/banners/b39dfdfee826bd9821fa302355b1e377.jpg);
-	padding: 40px;
+	background-color: #A3410D;
+    background-image: url(https://startbootstrap.com/img/bg.png);
+	padding: 20px 40px 0px 40px;
 	max-width: 600px;
 	margin: 40px auto;
 	border-radius: 4px;

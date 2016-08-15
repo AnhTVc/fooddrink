@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Facebook Login JavaScript Example</title>
+<meta charset="UTF-8">
+
+</head>
+<body>
+	<div id="fb-root"></div>
+
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId : '531914290330969',
+				status : true,
+				cookie : true,
+				xfbml : true
+			});
+		};
+
+		// Load the SDK asynchronously
+		(function(d) {
+			var js, id = 'facebook-jssdk', ref = d
+					.getElementsByTagName('script')[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement('script');
+			js.id = id;
+			js.async = true;
+			js.src = "//connect.facebook.net/en_US/all.js";
+			ref.parentNode.insertBefore(js, ref);
+		}(document));
+
+		function login() {
+			FB.login(function(response) {
+
+				// handle the response
+				alert("Response goes here!");
+
+			}, {
+				scope : 'email,user_photos,publish_actions'
+			});
+
+			var status = FB.getLoginStatus();
+			console.log(status);
+
+			FB.Event.subscribe('auth.authResponseChange', function(response) {
+				if (response.status === 'connected') {
+					alert("Successfully connected to Facebook!"
+							+ response.authResponse.userID);
+					FB.api('/me', function(fbUser) {
+						alert("Open the pod bay doors, " + fbUser.name + ".");
+					});
+
+				} else if (response.status === 'not_authorized') {
+					alert("Login failed!");
+				} else {
+					alert("Unknown error!");
+				}
+			});
+
+			FB.getLoginStatus(function(response) {
+				if (response.status === 'connected') {
+					// the user is logged in and has authenticated your
+					// app, and response.authResponse supplies
+					// the user's ID, a valid access token, a signed
+					// request, and the time the access token 
+					// and signed request each expire
+					var uid = response.authResponse.userID;
+					var accessToken = response.authResponse.accessToken;
+				} else if (response.status === 'not_authorized') {
+					// the user is logged in to Facebook, 
+					// but has not authenticated your app
+				} else {
+					// the user isn't logged in to Facebook.
+				}
+			});
+
+		}
+
+		function logout() {
+			FB.logout(function(response) {
+				// user is now logged out
+			});
+		}
+	</script>
+
+	<button onclick="javascript:login();">Login Facebook</button>
+
+	<br>
+
+	<button onclick="javascript:logout();">Logout from Facebook</button>
+</body>
+</html>

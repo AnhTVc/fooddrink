@@ -8,6 +8,7 @@ public class Restaurant {
 	private String name;
 	private String phoneNumber;
 	private String introduce;//Mô tả nhà hàng
+	private String contact;
 	private String avatar; //Url ảnh đại diện
 	private ArrayList<GroupMenu> groupMenus; //Danh sách các món ăn
 	private ArrayList<Sale> sales; //Một nhà hàng có nhiều chương trình giảm giá
@@ -66,6 +67,12 @@ public class Restaurant {
 	}
 	public void setStatusUpdate(int statusUpdate) {
 		this.statusUpdate = statusUpdate;
+	}
+	public String getContact() {
+		return contact;
+	}
+	public void setContact(String contact) {
+		this.contact = contact;
 	}
 	
 }

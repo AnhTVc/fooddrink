@@ -7,6 +7,8 @@ public class Customer implements People{
 	private String name;
 	private String email;
 	private String phoneNumber;
+	private String userId;
+	private String contact;//URL
 	public String getIdCustomer() {
 		return idCustomer;
 	}
@@ -42,6 +44,18 @@ public class Customer implements People{
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public String getContact() {
+		return contact;
+	}
+	public void setContact(String contact) {
+		this.contact = contact;
 	}
 
 }

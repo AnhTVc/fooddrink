@@ -28,6 +28,19 @@
 		<description></description>
 		<servlet-class>com.project.controller.UpdateInfoRestaurant</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>Logout</servlet-name>
+		<display-name>Logout</display-name>
+		<description></description>
+		<servlet-class>com.project.controller.Logout</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Register</servlet-name>
+		<display-name>Register</display-name>
+		<description></description>
+		<servlet-class>com.project.controller.Register</servlet-class>
+	</servlet>
+	
 	<servlet-mapping>
 		<servlet-name>AdminRestaurant</servlet-name>
 		<url-pattern>/AdminRestaurant</url-pattern>
@@ -43,5 +56,13 @@
 	<servlet-mapping>
 		<servlet-name>UpdateInfoRestaurant</servlet-name>
 		<url-pattern>/UpdateInfoRestaurant</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/Logout</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Register</servlet-name>
+		<url-pattern>/Register</url-pattern>
 	</servlet-mapping>
 </web-app>

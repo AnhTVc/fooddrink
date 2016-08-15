@@ -64,14 +64,34 @@
 						style="text-transform: uppercase;">Ưu đãi mới nhất</a></li>
 					<li><a class="page-scroll" href="#interested"
 						style="text-transform: uppercase;">Quan tâm nhất</a></li>
+
+					<%
+						HttpSession httpSession = request.getSession();
+						String name_customer = (String) session
+								.getAttribute("name_customer");
+						System.out.print("=============>" + name_customer);
+						if (session.getAttribute("name_customer") != null) {
+					%>
+					<li><a class="page-scroll" href="#"
+						style="text-transform: uppercase;"><%=name_customer %></a></li>
+						
+						<li><a class="page-scroll" href="Logout" onclick="logout"
+						style="text-transform: uppercase;">Thoát</a></li>
+					<%
+						} else {
+					%>
 					<li><a class="page-scroll" href="login"
 						style="text-transform: uppercase;">Đăng nhập/Đăng ký</a></li>
+					<%
+						}
+					%>
+
 					<!-- Modal login/register -->
 
 					<!-- ./ -->
 
-					<li><a class="page-scroll" href="#contact"
-						style="text-transform: uppercase;">Liên hệ</a></li>
+					<!-- <li><a class="page-scroll" href="#contact"
+						style="text-transform: uppercase;">Liên hệ</a></li> -->
 
 				</ul>
 			</div>
@@ -256,7 +276,7 @@
 							AM đến 12:30 AM</span>
 
 						<p
-							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #9E8D0C">Áp
 							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
@@ -281,7 +301,7 @@
 							AM đến 12:30 AM</span>
 
 						<p
-							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #9E8D0C">Áp
 							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
@@ -306,7 +326,7 @@
 							AM đến 12:30 AM</span>
 
 						<p
-							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #9E8D0C">Áp
 							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
@@ -331,7 +351,7 @@
 							AM đến 12:30 AM</span>
 
 						<p
-							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #9E8D0C">Áp
 							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
@@ -371,7 +391,7 @@
 							AM đến 12:30 AM</span>
 
 						<p
-							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #9E8D0C">Áp
 							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
@@ -396,7 +416,7 @@
 							AM đến 12:30 AM</span>
 
 						<p
-							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #9E8D0C">Áp
 							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
@@ -421,7 +441,7 @@
 							AM đến 12:30 AM</span>
 
 						<p
-							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #9E8D0C">Áp
 							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
@@ -446,7 +466,7 @@
 							AM đến 12:30 AM</span>
 
 						<p
-							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #9E8D0C">Áp
 							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
@@ -486,7 +506,7 @@
 							AM đến 12:30 AM</span>
 
 						<p
-							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #9E8D0C">Áp
 							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
@@ -511,7 +531,7 @@
 							AM đến 12:30 AM</span>
 
 						<p
-							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #9E8D0C">Áp
 							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
@@ -536,7 +556,7 @@
 							AM đến 12:30 AM</span>
 
 						<p
-							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #9E8D0C">Áp
 							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
@@ -561,7 +581,7 @@
 							AM đến 12:30 AM</span>
 
 						<p
-							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #D6BE08">Áp
+							style="font-style: normal; font-size: 13px; margin-top: 25px; color: #9E8D0C">Áp
 							dụng tất cả các ngày trong tuần</p>
 					</div>
 				</div>
@@ -690,6 +710,24 @@
 	<script src="js/customer.js"></script>
 	<!-- Theme JavaScript -->
 	<script src="<%=contextPath%>/js/agency.min.js"></script>
+	<script type="text/javascript">
+	function logout(){
+		$.ajax({
+	        url: URL + "Logout",
+	        type: "post",
+	        data: 'logout=true',
+	        success: function (response) {
+	           // you will get response from your php page (what you echo or print)                 
+	        	if(response.data == "true"){
+	        		window.location.replace("http://localhost:8080/fooddrink/Logout");
+	        	}
+	        },
+	        error: function(jqXHR, textStatus, errorThrown) {
+	           alert(textStatus, errorThrown);
 
+	        }
+	    });
+	}
+	</script>
 </body>
 </html>

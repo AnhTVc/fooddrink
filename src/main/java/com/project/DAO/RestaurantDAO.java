@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.project.POJO.Address;
 import com.project.POJO.Restaurant;
 import com.project.POJO.Sale;
 import com.project.POJO.TimeSale;
@@ -18,7 +17,7 @@ public class RestaurantDAO {
 	 * @return
 	 */
 	public Restaurant findRestaurantById(String idRestaurant){
-		String query = "SELECT * from restaurant, address where restaurant.id_address = address.id_address and restaurant.id_restaurant = " + idRestaurant + ";";
+		String query = "SELECT * from restaurant where  restaurant.id_restaurant = " + idRestaurant + ";";
 		Connection connection = DBPool.getConnection();
 		PreparedStatement preStatement = null;
 		ResultSet resultSet = null;
@@ -34,12 +33,7 @@ public class RestaurantDAO {
 				restaurant.setAvatar(resultSet.getString("avatar"));
 				restaurant.setIntroduce(resultSet.getString("introduce"));
 				restaurant.setStatusUpdate(resultSet.getInt("status_update"));
-				System.out.print(resultSet.getInt("status_update"));
-				Address address = new Address();
-				address.setIdAdress(resultSet.getString("id_address"));
-				address.setCity(resultSet.getString("city"));
-				address.setDistrict(resultSet.getString("district"));
-				address.setDetail(resultSet.getString("detail"));
+				System.out.print("Status ===" + resultSet.getInt("status_update"));
 				
 				query = "Select * from sale, time_sale where sale.id_restaurant = " + restaurant.getIdRestaurant() + " and sale.id_sale = time_sale.id_sale;";
 				Connection conn = DBPool.getConnection();
